@@ -1,0 +1,17 @@
+<form id="f" method="POST" action="/createMeeting">
+    <fieldset class="div-main">
+        <p>
+            <label class="lbl-common">
+                新しい会議名
+                <input class="txt-common" type="text" name="meetingName" placeholder="会議名を入力して下さい" required>
+            </label>
+        </p>
+        <br>
+        <p><input type="submit" value="新しい会議を開く"></p>
+        <p><input type="button" value="戻る" 
+            onclick="location.href='/entrance';"></p>
+    </fieldset>
+</form>
+<script type="text/javascript">
+     $("[type='button'],[type='submit']").button().width(200);   
+</script>

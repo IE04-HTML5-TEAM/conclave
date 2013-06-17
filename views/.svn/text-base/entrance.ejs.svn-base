@@ -1,0 +1,14 @@
+<div class="div-main">
+  <p><input type="button" value="新しい会議を開く" 
+    onclick="location.href='/newMeeting'"></p>
+  <p><input type="button" value="開催中の会議に参加する" 
+    onclick="location.href='/availableMeetings';"></p>
+  <p><input type="button" value="過去の会議を開く" 
+    onclick="location.href='/closedMeetings';"></p>
+  <p><input type="button" value="ログアウト" 
+    onclick="location.href='/'" id="logout"></p>
+  <input type="hidden" id="searchmode" name="searchmode" value="available">
+</div>
+<script type="text/javascript">
+     $("[type='button']").button().width(200);   
+</script>

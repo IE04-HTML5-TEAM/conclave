@@ -1,0 +1,35 @@
+<fieldset class="div-main">
+    <!-- ここから下はダミーです -->
+    <table class="roomlist">
+        <caption>
+            <strong>会議一覧</strong>
+            <details>
+                <summary><%= displayText %>会議一覧を表示しています。</summary>
+                <p>現在<%= displayText %>会議の一覧が表示されます。参加したい会議の参加ボタンを押下すると、会議に参加できます。</p>
+            </details>
+        </caption>
+        <thead>
+            <tr>
+                <th>会議名</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%for(var key in meetings){%>
+            <tr>
+                <td><%=meetings[key].name%></td>
+                <td>
+                    <input type="button" value="参加" onclick="location.href='main/<%=meetings[key].id%>'">
+                </td>
+            </tr>
+            <%}%>
+        </tbody>
+    </table>
+    <input type="hidden" id="roomname" name="roomname" value="">
+    <br>
+    <p><input type="button" value="戻る" onclick="location.href='/entrance';"></p>
+</fieldset>
+<script type="text/javascript">
+     $("[type='button']").button().width(200);
+     $("table.roomlist [type='button']").width(60).css('padding','3px');
+</script>

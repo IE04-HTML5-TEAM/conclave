@@ -1,0 +1,123 @@
+ <!-- ホワイトボードブロック -->
+<div class="leftBlock">
+  <div class="whiteboard box">
+    <div class="slideToolbar">
+      <ul id="color" class="slideMenu">
+        <p class="toolbar-header">color</p>
+        <li id="black"> </li>
+        <li id="blue"></li>
+        <li id="red"></li>
+        <li id="green"></li>
+      </ul>
+    </div>
+    <div class="slideToolbar">
+      <ul id="width" class="slideMenu">
+        <p class="toolbar-header">width</p>
+        <li id="small"><img src="/images/small.gif" title="small"></li>
+        <li id="middle"><img src="/images/middle.gif" title="middle"></li>
+        <li id="large"><img src="/images/large.gif" title="large"></li>
+      </ul>
+    </div>
+    <div class="slideToolbar">
+      <ul id="tool" class="normalMenu">
+        <p class="toolbar-header">tool</p>
+        <li id="draw"><img src="/images/pen.gif" title="pen"></li>
+        <li id="erase"><img src="/images/eraser.gif" title="eraser"></li>
+        <li id="memo"><img src="/images/memo.gif" title="memo"></li>        
+      </ul>
+    </div>
+    <div class="toolbar">
+      <ul style="float: right">
+        <li id="uploadDoc"><img src="/images/upload.gif" title="upload"></li>
+      </ul>
+    </div>
+    <div class="clear" style="height:0px;">&nbsp;</div>
+    <div id="bgCanvasArea">
+        <div id="bgCanvas"></div>
+        <div id="droppable" style="display:none;">
+            <form id="uploadForm" enctype="multipart/form-data" method="post" action="/upload">
+                <input type="file" class="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();" />
+                <label class="file_mask">
+                    <span><!-- 画像用spanタグ --></span>
+                    <input type="text" id="mask_file_01">
+                </label>
+                <div>
+                    PDFファイルをアップロードします。<br />
+                    ファイルアップロードアイコンをクリック、<br />
+                    またはPDFファイルをドラッグ＆ドロップして下さい。
+                </div>
+                <br />
+                <div id="fileName"></div>
+                <div id="fileSize"></div>
+                <div id="fileType"></div>
+                <div id="progressNumber"></div>
+                <br />
+                <input id="uploadSubmit" type="button" class="btn hover-btn" value="アップロード">
+                <input id="uploadCancel" type="button" class="btn hover-btn" value="キャンセル">
+            </form>
+        </div>
+    </div>
+    <div id="canvasArea" class="canvas">
+      <canvas id="myCanvas"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="rightBlock">
+  <!-- 参加者一覧 -->
+  <div class="box">
+    <p class="box-header">
+      <span class="blockControl" style="display:none;">&#9654; 参加者一覧</span>
+      <span class="blockControl">&#9660; 参加者一覧</span>
+    </p>
+    <div id="userList">
+      <ul style="list-style-type: none "class="list"></ul>
+    </div>
+  </div>
+  <!-- 動画ブロック -->
+  <div id="videoBox" class="box" style="height:auto">
+    <p class="box-header">
+      <span class="blockControl">&#9654; 動画配信 </span>
+      <span class="blockControl" style="display:none;">&#9660; 動画配信</span>
+    </p>
+    <div style="padding: 5px; display:none;">
+      <ul id="paticipants" class ="list">
+      </ul>
+      <div style="text-align: center; margin: 10px;">
+        <input type="button" id="startStreaming" class="btn hover-btn"
+         onclick="startStreaming()" value="配信開始"></input>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="rightBlock">
+  <!-- チャットブロック -->
+  <div class="box">
+    <p class="box-header">
+      <span class="blockControl" style="display:none;">&#9654; チャットエリア</span>
+      <span class="blockControl">&#9660; チャットエリア</span>
+    </p>
+    <div>
+      <!-- チャット入力ブロック -->
+      <div class="chatInput">
+        <div style="text-align:center;">
+          <textarea id="inputMessage" wrap="hard"></textarea><br>
+        </div>
+        <div style="text-align:right;">
+          <input id="sendMessage" type="button" class="btn hover-btn"
+           value="メッセージを送信">
+        </div>
+      </div>
+      <!-- チャットログブロック -->
+      <div class="chatLog">
+
+        <div id="messageArea">
+          <ul style="list-style-type: none " class="list" ></ul>
+        </div>
+      </div>
+    </div>
+</div>
+  </div>
+<!-- 会議IDを他から参照するための保持 -->
+<input id="meetingID" type="hidden" value="<%=meetingID%>">
+

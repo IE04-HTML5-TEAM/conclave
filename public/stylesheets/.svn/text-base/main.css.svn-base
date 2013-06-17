@@ -1,0 +1,173 @@
+html{
+    height: 100%;
+    background: rgba(252,252,252,1);
+    padding: 0px;
+}
+body,input,select,textarea
+{
+    font-size: 13px;
+    font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","Osaka","Meiryo UI","ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+    margin:0px;
+    padding:0px;
+}
+
+body
+{
+background: rgb(159,167,168); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(159,167,168,1) 0%, rgba(252,252,252,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(159,167,168,1)), color-stop(100%,rgba(252,252,252,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(159,167,168,1) 0%,rgba(252,252,252,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(159,167,168,1) 0%,rgba(252,252,252,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(159,167,168,1) 0%,rgba(252,252,252,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(159,167,168,1) 0%,rgba(252,252,252,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9fa7a8', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */
+    background-repeat: no-repeat;
+}
+
+a {
+  color: #00B7FF;
+}
+
+header {
+    width:100%;
+    color: white;
+    padding:8px 3px 8px 3px;
+    background: #45484d; /* Old brbackground: #7d7e7d; /* Old browsers */
+    background: -moz-linear-gradient(top,  #7d7e7d 0%, #2c2d29 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#2c2d29)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #7d7e7d 0%,#2c2d29 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #7d7e7d 0%,#2c2d29 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #7d7e7d 0%,#2c2d29 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #7d7e7d 0%,#2c2d29 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#2c2d29',GradientType=0 ); /* IE6-9 */
+}
+
+header table{
+    width: 100%;
+}
+
+header span.logo{
+    width:100px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
+    font-size: 15px;
+    color: black;
+    text-shadow: 1px 1px #777, -1px -1px #444;    
+}
+
+header span.title{
+    width:100px;
+    margin: 20px;
+    font-size: 15px;
+    color: #474747;
+    text-shadow: 1px 1px #999, -1px -1px #444;
+}
+header table td{
+    width: auto;
+    padding-right: 30px;
+}
+
+h1.title{
+    font-size: 70px;
+    text-align: center;
+    margin: 50px 0px;
+    text-shadow:darkgray 10px 10px 5px;
+}
+
+nav ul {
+    padding:0px;
+}
+ 
+nav li {
+    list-style: none;
+    float:left;
+    font-size: 14px;
+    font-weight:bold;
+    color: #ffffff;
+    padding: 5px 10px;
+    background: -moz-linear-gradient(
+        top,
+        #e6e6e6 0%,
+        #dbdbdb 15%,
+        #919191);
+    background: -webkit-gradient(
+        linear, left top, left bottom, 
+        from(#e6e6e6),
+        color-stop(0.15, #dbdbdb),
+        to(#919191));
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid #adadad;
+    -moz-box-shadow:
+        0px 1px 1px rgba(020,020,020,0.2),
+        inset 0px -1px 0px rgba(143,143,143,0.7);
+    -webkit-box-shadow:
+        0px 1px 1px rgba(020,020,020,0.2),
+        inset 0px -1px 0px rgba(143,143,143,0.7);
+    box-shadow:
+        0px 1px 1px rgba(020,020,020,0.2),
+        inset 0px -1px 0px rgba(143,143,143,0.7);
+    text-shadow:
+        0px -1px 0px rgba(010,010,010,0.2),
+        0px 1px 0px rgba(255,255,255,0);
+}
+
+nav li a {
+    display:block;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+nav li a:hover {
+    display:block;
+    color: #696969;
+}
+
+div.leftBlock {
+    float: left;
+    width: 768px;
+    height:768px;
+    margin:5px 5px 5px 15px;
+}
+
+div.rightBlock {
+    float: left;
+    width: 200px;
+    margin:3px;
+}
+
+div.longBox{
+    height:560px;
+}
+
+/*@media screen and (max-width:1030px){
+    div.rightBlock {
+        float: left;
+        width: 768px;
+        height:768px;
+        margin:3px;
+    }
+}
+*/
+div.chatLog {
+    width: 100%;
+    margin-bottom:8px;
+}
+
+div.chatInput {
+    border-bottom: 1px solid gray;
+    padding: 5px;
+}
+
+.clear {
+    clear:both; 
+}
+ 
+hooter {
+    width:100%;
+    margin:3px;
+}
+
+.blockControl { cursor: pointer; }

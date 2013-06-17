@@ -1,0 +1,37 @@
+.div-main {
+    width:100%;
+    text-align: center;
+}
+
+.lbl-common {
+    height: 13px;
+}
+.txt-common {
+    width:200px;
+    height: 13px;
+}
+.btn-common {
+    width: 200px;
+    height: 23px;
+}
+.btn-common-small {
+    width: 50px;
+    height: 23px;
+}
+
+.center {
+    text-align: center;
+}
+
+table.roomlist {
+    margin:0 auto;
+    width:300px;
+}
+table.roomlist th {
+    background-color: Gray;
+    color: White;
+    border: solid 1px gray;
+}
+table.roomlist td {
+    border: solid 1px gray;
+}

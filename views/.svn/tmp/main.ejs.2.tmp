@@ -1,0 +1,99 @@
+ <!-- ホワイトボードブロック -->
+<div class="leftBlock">
+  <div class="whiteboard">
+    <div class="toolbar">
+      <ul id="color">
+        <li id="black"> </li>
+        <li id="blue"></li>
+        <li id="red"></li>
+        <li id="green"></li>
+      </ul>
+      <ul id="width">
+        <li id="small">S</li>
+        <li id="middle">M</li>
+        <li id="large">L</li>
+      </ul>
+      <ul id="tool">
+        <li id="draw">pen</li>
+        <li id="erase">eraser</li>
+        <li id="memo">memo</li>        
+        <li id="uploadDoc">upload</li>
+      </ul>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="canvas">
+      <canvas id="myCanvas"></canvas>
+    </div>
+  </div>
+</div>
+
+
+<div id="uploadDialog">
+    <div id="uploadDrogArea" draggable="true" style="background-color:#fff;text-align:center;">
+        <br />
+        <br />
+        <span>ここにPDFファイルを<br>ドラッグ＆ドロップして下さい。</span><br />
+        <br />
+        <br />
+    </div>
+    <form id="uploadForm" enctype="multipart/form-data" method="post" action="/upload">
+        <div class="row">
+            <input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();" />
+        </div>
+        <div id="fileName"></div>
+        <div id="fileSize"></div>
+        <div id="fileType"></div>
+        <div id="progressNumber"></div>
+    </form>
+    <div id="uploadedPath"></div>
+</div>
+
+
+<!-- チャットブロック -->
+<div class="rightBlock box">
+  <!-- チャットログブロック -->
+  <div class="chatLog">
+    <p class="box-header">チャットログ</p>
+    
+    <div id="messageArea">
+      <ul style="list-style-type: none " class="list" ></ul>
+    </div>
+  </div>
+  <!-- チャット入力ブロック -->
+  <div class="chatInput">
+    <p style="margin:5px 10px;">チャット入力</p>
+    <div style="text-align:center;">
+      <textarea id="inputMessage" wrap="hard" style="width:96%;"></textarea><br>
+    </div>
+    <div style="text-align:right;">
+      <input id="sendMessage" type="button" value="メッセージを送信">
+    </div>
+  </div>
+</div>
+<!-- 参加者一覧 -->
+<div class="rightBlock box miniBlock shortBox">
+  <p class="box-header">参加者一覧</p>
+    <div id="userList">
+      <ul style="list-style-type: none "class="list"></ul>
+    </div>
+</div>
+
+<!-- 動画ブロック -->
+<div id="videoBox" class="rightBlock box miniBlock" style="height:auto">
+  <p class="box-header">動画配信</p>
+  <ul id="paticipants">
+  </ul>
+  <input type="button" id="startStreaming"
+  onclick="startStreaming()" value="start streaming"></input>
+</div>
+
+<script type="text/javascript">
+     $("#startStreaming").button();   
+</script>
+
+<!-- 会議IDを他から参照するための保持 -->
+<input id="meetingID" type="hidden" value="<%=meetingID%>">
+
+<script type="text/javascript">
+     $("#sendMessage,#startStreaming").button().width(200);   
+</script>

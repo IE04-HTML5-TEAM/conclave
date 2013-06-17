@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5,minimum-scale=0.5, maximum-scale=0.5, user-scalable=yes">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+    <link rel='stylesheet' href='/stylesheets/whiteboard.css' />
+    <link rel='stylesheet' href='/stylesheets/memo.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/ui-lightness/jquery-ui.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/javascripts/application.js"></script>
+    <script type="text/javascript" src="/javascripts/whiteboard.js"></script>
+    <script type="text/javascript" src="/javascripts/memo.js"></script>
+    <script type="text/javascript" src="/javascripts/adapter.js"></script>
+    <script type="text/javascript" src="/javascripts/video.js"></script>
+  </head>
+  <body>
+    <!-- ヘッダ -->
+    <header>
+      <p style="margin:10px;">[会議名] <%= meetingName %></p>
+      <p id="loginID">[ログイン中] <%= loginid %> さん</p>
+      <nav>
+        <ul>
+           <li><a href="/entrance" id="exit">退室</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ヘッダー/メインコンテンツ境界 -->
+    <div class="clear"><hr /></div>
+
+    <!-- メインコンテンツ -->
+    <%-body%>
+
+    <!-- メインコンテンツ/フッター境界 -->
+    <div class="clear"><hr /></div>
+
+    <!-- フッター -->
+    <%-include footer%>
+  </body>
+</html>

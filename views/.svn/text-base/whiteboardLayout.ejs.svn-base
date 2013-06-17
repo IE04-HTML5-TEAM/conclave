@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=0.5, maximum-scale=1.5, user-scalable=yes">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+    <link rel='stylesheet' href='/stylesheets/whiteboard.css' />
+    <link rel='stylesheet' href='/stylesheets/memo.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+   
+<!--     オフライン用-->
+    <link rel="stylesheet" href="/stylesheets/jqueryUI.css" />
+    <script type="text/javascript" src="/javascripts/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery-ui-1.10.0.js"></script>
+      <link rel="stylesheet" href="/stylesheets/jquery-ui-1.10.0.custom.css" />
+
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/javascripts/application.js"></script>
+    <script type="text/javascript" src="/javascripts/whiteboard.js"></script>
+    <script type="text/javascript" src="/javascripts/memo.js"></script>
+    <script type="text/javascript" src="/javascripts/adapter.js"></script>
+    <script type="text/javascript" src="/javascripts/video.js"></script>
+  </head>
+  <body>
+    <!-- ヘッダ -->
+    <header>
+      <table>
+        <tr>
+          <td><span class="logo">Conclave</span></td>
+          <td>
+            <span class="title">会議名</span>
+            <%= meetingName %>
+          </td>
+          <td align="right">
+            <span class="title">ログイン名</span>
+            <%= loginid %> さん
+            <input type="hidden" id="loginID" value=<%=loginid%>>
+            <input type="button" class="btn btn-mini btn-inverse" id="exit" value="退室"
+            onclick="location.href='/entrance'">
+          </td>
+        </tr>
+      </table>
+    </header>
+    <!-- ヘッダー/メインコンテンツ境界 -->
+    <div class="clear"><hr /></div>
+
+    <!-- メインコンテンツ -->
+    <%-body%>
+
+    <!-- メインコンテンツ/フッター境界 -->
+    <div class="clear"><hr /></div>
+
+    <!-- フッター -->
+    <%-include footer%>
+  </body>
+</html>

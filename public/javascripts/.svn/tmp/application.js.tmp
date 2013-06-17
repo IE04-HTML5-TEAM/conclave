@@ -1,0 +1,74 @@
+$(function(){
+  var socket = new io.connect("/");
+  // 接続時に接続方式表示
+  socket.on("connect", function(){
+    $("#transportName").text("Connect via " + socket.socket.transport.name);
+    $("#userList ul").empty();
+    
+    //コマンドを取得
+    socket.emit("getCommand",{meetingID: $(meetingID).val()})
+
+    //参加者リストに追加
+    socket.emit("addParticipant")
+  });
+  
+  //参加者一覧の取得
+  socket.on("getUserList", function(message){
+    //同じ会議でのメッセージのみ表示する
+    if(message.meetingID == $(meetingID).val())
+    {
+      $("<li>").text(message.loginID).appendTo($("#userList ul"));
+    }
+  });
+  
+  //入室者表示
+  socket.on("enterUser", function(message){
+    //同じ会議でのメッセージのみ表示する
+    if(message.meetingID == $(meetingID).val())
+    {
+      $("<li class = '" + message.loginID + "' >").text(message.loginID).appendTo($("#userList ul"));
+      $("<li>").text(message.loginID + "様が入室しました。").appendTo($("#messageArea ul"));
+    }
+  });
+  
+  //退室者ログ表示
+  socket.on("exitUser", function(message){
+    //同じ会議でのメッセージのみ表示する
+    if(message.meetingID == $(meetingID).val())
+    {
+      $("<li class = '" + message.loginID + "' >").visible = False;
+      $("<li>").text(message.loginID + "様が退室しました。").appendTo($("#messageArea ul"));
+    }
+  });
+  
+  // 受信メッセージ表示
+  socket.on("message", function(message){
+    //同じ会議でのメッセージのみ表示する
+    if(message.meetingID == $(meetingID).val())
+    {
+      $("<li>").text(message.loginID + ":" + message.text).appendTo($("#messageArea ul"));
+    }
+  });
+
+  // メッセージ送信
+  $("#sendMessage").click(function(){
+    socket.emit("message", {
+      text: $("textarea#inputMessage").val(),
+      meetingID: $(meetingID).val()
+    });
+    //入力フォームの文字を削除
+    $("textarea#inputMessage").val("");
+  });
+<<<<<<< .mine
+
+  
+  
+
+=======
+  //うまく動かないため一旦止め
+  //退室時
+  $("a#exit").click(function(){
+    socket.emit("disconect",{meetingID: $(meetingID).val()})
+  });
+>>>>>>> .r59
+});
